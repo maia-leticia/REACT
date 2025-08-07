@@ -7,4 +7,4 @@ Sempre que possível, os exemplos estarão disponíveis para visualização no C
 
 ---
 
-📌 Repositório pessoal de estudos — simples, direto e em constante evolução.
+📌 Repositório pessoal de estudos
