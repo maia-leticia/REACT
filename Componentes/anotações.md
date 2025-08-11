@@ -61,7 +61,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Main />
   <Footer />
 </App>
-
+```
 ---
 
 ## Observações Importantes
