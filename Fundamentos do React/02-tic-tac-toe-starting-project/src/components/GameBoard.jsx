@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const initialGame = [
     [null, null, null],
     [null, null, null],
@@ -5,21 +7,30 @@ const initialGame = [
 ]
 
 export default function GameBoard(){
+
+    const [gameBoard, setGameBoard] = useState(initialGame)
+
+    function handleSelectGame(rowIndex, colIndex){
+        setGameBoard((prevGame)=>{
+            const updateGame = [...prevGame.map(innerArray => [...innerArray])]
+            updateGame[rowIndex][colIndex] = "X"
+            return updateGame
+        })
+    }
+
     return(
         <ol id="game-board">
-          
-            {
-                initialGame.map((row, rowIndex) => 
+            {gameBoard.map((row, rowIndex) => (
                 <li key={rowIndex}>
                     <ol>
-                        {row.map((symbol, colIndex) => 
+                        {row.map((symbol, colIndex) => (
                             <li key={colIndex}>
-                                <button>{symbol}</button>
+                                <button onClick={()=>handleSelectGame(rowIndex, colIndex)}>{symbol}</button>
                             </li>
-                        )}
+                        ))}
                     </ol>
                 </li>
-                )
+                ))
             }
            
         </ol>
