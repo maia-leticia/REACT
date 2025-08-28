@@ -6,16 +6,17 @@ const initialGame = [
     [null, null, null],
 ]
 
-export default function GameBoard(){
+export default function GameBoard({onChangeTurn, activePlayer}){
 
     const [gameBoard, setGameBoard] = useState(initialGame)
 
     function handleSelectGame(rowIndex, colIndex){
         setGameBoard((prevGame)=>{
             const updateGame = [...prevGame.map(innerArray => [...innerArray])]
-            updateGame[rowIndex][colIndex] = "X"
+            updateGame[rowIndex][colIndex] = activePlayer
             return updateGame
         })
+        onChangeTurn()
     }
 
     return(
