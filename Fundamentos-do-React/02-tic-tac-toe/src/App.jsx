@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Player from "./components/Player"
-import GameBoard from "./components/Gameboard"
+import GameBoard from "./components/GameBoard"
 import Log from "./components/Log"
 import {WINNING_COMBINATIONS} from "./winning-combinations"
 import GameOver from "./GameOver"
