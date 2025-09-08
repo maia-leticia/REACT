@@ -15,12 +15,14 @@ function App() {
 
   const [value, setValue] = useState(VALUES)
 
+  const inputIsValid = value.duration >=1
+
   function handleChangeName(identification, value){
 
     setValue((prevValues)=>{
       return{
         ...prevValues,
-        [identification]: value
+        [identification]: +value
       }
     })
   } 
@@ -39,7 +41,8 @@ function App() {
           </div>    
         </div>
         <div>
-          <Result values={value}/>
+          { inputIsValid && <Result values={value}/>}
+          { !inputIsValid && <p className="center">Please enter a duration greater than zero.</p>}
         </div>
       </main>
     </>
