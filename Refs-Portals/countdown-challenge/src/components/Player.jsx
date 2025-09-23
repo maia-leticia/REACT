@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 
+
 export default function Player() {
   const currentName = useRef()
   const [name, setName] = useState(null)
@@ -13,6 +14,7 @@ export default function Player() {
   function handleSubmitName(){
     // setSubmitName(true)
     setName(currentName.current.value)
+    currentName.current.value = ''
   }
 
 
